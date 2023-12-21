@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+// Import necessary dependencies from React
+import React from 'react';
+import DataProvider from './context/DataProvider';
+import Home from './components/Home'; // Adjust the path to the Home component
 
+// App component - the main entry point of the application
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // Wrap the entire application with the DataProvider to provide context
+    <DataProvider>
+      {/* Render the Home component */}
+      <Home />
+    </DataProvider>
   );
 }
 
+// Export the App component as the default export
 export default App;
